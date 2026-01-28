@@ -1,0 +1,37 @@
+{
+  "id": "outrider-rng",
+  "title": "Outrider's RNG",
+  "description": "<p>Tired of repeat identical dice rolls? Do the dice not feel so random at times?</p><p>Look no further, because you can easily replace Foundry's default RNG with a better one that utilizes WebCrypto!</p><p></p><p>This module is small and simple, and includes few macros for testing and proof of randomness.</p><p></p><p>To enable it, simply install the module then activate it on your table(s). Once activated, it automatically overrides the RNG used for all dice rolls and other number generation within Foundry. It is fully compatible with Dice-So-Nice and similar mods.</p>",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "David Outrider",
+      "url": "https://github.com/0utrider",
+      "discord": "0utrider",
+      "flags": {}
+    }
+  ],
+  "scripts": [
+    "scripts/rng.js"
+  ],
+  "packs": [
+    {
+      "name": "outrider-rng-macros",
+      "label": "Outrider's RNG Macros",
+      "path": "packs/outrider-rng-macros",
+      "type": "Macro",
+      "system": "pf2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "url": "https://github.com/0utrider/outrider-rng",
+  "manifest": "",
+  "flags": {}
+}
