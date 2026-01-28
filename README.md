@@ -1,6 +1,6 @@
 # Outrider's RNG
 
-True RNG module for Foundry VTT that replaces the default Mersenne Twister number generator with a WebCrypto cryptographically generator.
+True RNG module for Foundry VTT that replaces the default Mersenne Twister number generator with a WebCrypto cryptographic generator.
 
 ## Why?
 
@@ -28,4 +28,5 @@ Outrider's RNG mod provides high‑quality randomness with no external dependenc
 This module overrides:
 
 ```js
+
 CONFIG.Dice.randomUniform
