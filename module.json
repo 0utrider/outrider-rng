@@ -33,6 +33,6 @@
   ],
   "url": "https://github.com/0utrider/outrider-rng",
   "manifest": "https://raw.githubusercontent.com/0utrider/outrider-rng/refs/heads/main/module.json",
-  "download": "https://github.com/0utrider/outrider-rng/archive/refs/tags/v1.zip",
+  "download": "https://github.com/0utrider/outrider-rng/releases/download/v1/module.zip",
   "flags": {}
 }
