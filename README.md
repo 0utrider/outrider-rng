@@ -2,6 +2,8 @@
 
 This is a Foundry VTT module that replaces the default Mersenne Twister RNG with a WebCrypto cryptographically secure RNG.
 
+Foundry Package: https://foundryvtt.com/packages/outrider-rng
+
 ## Why?
 
 Foundry uses MT19937, a deterministic PRNG that can produce visible dice roll streaks or clusters.
@@ -17,6 +19,9 @@ Outrider RNG provides high‑quality randomness with no external dependencies.
 
 ## Installation
 
+Easy Method: search for "Outrider's RNG" in Foundry VTT
+
+Manual Method:
 1. Download or clone this module.
 2. Zip the folder so the root contains `module.json`.
 3. In Foundry:  
@@ -28,4 +33,5 @@ Outrider RNG provides high‑quality randomness with no external dependencies.
 This module overrides:
 
 ```js
+
 CONFIG.Dice.randomUniform
