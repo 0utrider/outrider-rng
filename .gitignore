@@ -1,0 +1,13 @@
+node_modules/
+*.zip
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+*.swp
+.env
+packs/*/LOCK
+packs/*/LOG
+packs/*/LOG.old
+!packs/*/*.log

@@ -8,14 +8,14 @@ Foundry Package: https://foundryvtt.com/packages/outrider-rng
 
 Foundry uses MT19937, a deterministic PRNG that can produce visible dice roll streaks or clusters.
 
-Outrider RNG provides high‑quality randomness with no external dependencies.
+Outrider RNG provides high quality randomness with no external dependencies.
 
 ## Features
 
 - Cryptographically secure randomness
 - Zero configuration, dependencies, nor API keys
 - Works on all modern browsers
-- Fully compatible with Foundry VTT v10–v13
+- Fully compatible with Foundry VTT v10-v13
 
 ## Installation
 
@@ -33,5 +33,13 @@ Manual Method:
 This module overrides:
 
 ```js
-
 CONFIG.Dice.randomUniform
+```
+
+with a version backed by `crypto.getRandomValues` instead of Foundry's default Mersenne Twister.
+
+## Outrider's Mods
+
+The macro pack joins the shared, brand-violet **Outrider's Mods** compendium folder alongside
+every other installed Outrider module, once the active GM's client syncs on install or update.
+See `HANDOFF-OutriderMods-branding.md` in the Outrider family docs.
