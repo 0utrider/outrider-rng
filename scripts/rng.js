@@ -1,4 +1,4 @@
-import { supported, syncModulePacks } from "./lib/outrider-mods.js";
+import { packsNeedPlacement, supported, syncModulePacks } from "./lib/outrider-mods.js";
 
 const MODULE_ID = "outrider-rng";
 
@@ -14,18 +14,20 @@ Hooks.once("init", () => {
   game.settings.register(MODULE_ID, "syncedVersion", { scope: "world", config: false, type: String, default: "" });
 });
 
-/** Compendium Packs tab: retires the manifest's bootstrap "RNG" folder into "Outrider's Mods". */
+/** Compendium Packs tab: pack goes directly in "Outrider's Mods", no per-module folder. */
 async function syncWorldContent() {
-  await syncModulePacks(MODULE_ID, { folderNames: ["RNG"] });
+  await syncModulePacks(MODULE_ID, { folderNames: ["RNG", "Outrider's RNG"] });
 }
 
-// Version-gated: runs on install and on each update, never on plain reloads. Active GM only.
+// Version-gated, with self-heal: runs on install, on update, and on any reload where the pack
+// has lost its folder (e.g. the GM deleted "Outrider's Mods"). Active GM only.
 Hooks.once("ready", async () => {
   if (!supported()) return;
   game.modules.get(MODULE_ID).api = { syncWorldContent };
   if (!game.users.activeGM?.isSelf) return;
   const version = game.modules.get(MODULE_ID).version;
-  if (game.settings.get(MODULE_ID, "syncedVersion") === version) return;
+  const updated = game.settings.get(MODULE_ID, "syncedVersion") !== version;
+  if (!updated && !packsNeedPlacement(MODULE_ID)) return;
   try {
     await syncWorldContent();
     await game.settings.set(MODULE_ID, "syncedVersion", version);

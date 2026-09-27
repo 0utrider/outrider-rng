@@ -66,6 +66,18 @@ export async function getOrCreateSharedRoot(type) {
 const hasSubfolders = (folder) => game.folders.some((f) => f.folder?.id === folder.id);
 
 /**
+ * Self-heal check for the ready hook: true if any compendium pack of `moduleId` has no folder
+ * (never placed, or its folder was deleted, which leaves a dangling id and also reads as null).
+ * Run the sync when this is true even if the version gate says it already ran.
+ * A pack the GM moved into some other folder does not trigger it.
+ */
+export function packsNeedPlacement(moduleId) {
+  return game.packs.some(
+    (p) => p.metadata.packageType === "module" && p.metadata.packageName === moduleId && !p.folder,
+  );
+}
+
+/**
  * Put every compendium pack of `moduleId` directly in Outrider's Mods.
  *
  * - Pack at the top level: moved into the root.
