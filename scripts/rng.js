@@ -14,9 +14,9 @@ Hooks.once("init", () => {
   game.settings.register(MODULE_ID, "syncedVersion", { scope: "world", config: false, type: String, default: "" });
 });
 
-/** Compendium Packs tab: pack goes directly in "Outrider's Mods". Nothing else in the world is touched. */
+/** Compendium Packs tab: retires the manifest's bootstrap "RNG" folder into "Outrider's Mods". */
 async function syncWorldContent() {
-  await syncModulePacks(MODULE_ID);
+  await syncModulePacks(MODULE_ID, { folderNames: ["RNG"] });
 }
 
 // Version-gated: runs on install and on each update, never on plain reloads. Active GM only.

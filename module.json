@@ -34,6 +34,9 @@
       "flags": {}
     }
   ],
+  "packFolders": [
+    { "name": "RNG", "sorting": "a", "color": "#7000d6", "packs": ["outrider-rng-macros"] }
+  ],
   "url": "https://github.com/0utrider/outrider-rng",
   "manifest": "https://github.com/0utrider/outrider-rng/releases/latest/download/module.json",
   "download": "https://github.com/0utrider/outrider-rng/releases/latest/download/outrider-rng.zip",
