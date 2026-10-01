@@ -15,7 +15,7 @@ Outrider RNG provides high quality randomness with no external dependencies.
 - Cryptographically secure randomness
 - Zero configuration, dependencies, nor API keys
 - Works on all modern browsers
-- Fully compatible with Foundry VTT v10-v13
+- Foundry VTT v14+ (older installs on v10-v13 can stay on the v1.0.x releases)
 
 ## Installation
 
@@ -42,4 +42,3 @@ with a version backed by `crypto.getRandomValues` instead of Foundry's default M
 
 The macro pack joins the shared, brand-violet **Outrider's Mods** compendium folder alongside
 every other installed Outrider module, once the active GM's client syncs on install or update.
-See `HANDOFF-OutriderMods-branding.md` in the Outrider family docs.
